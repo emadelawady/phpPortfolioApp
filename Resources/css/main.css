@@ -1,0 +1,157 @@
+/* Generals */
+
+:root {
+  --mainColor: rgb(243 244 246);
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.section_underline::before{
+  background-color: #f0af2d;
+  bottom: -10px;
+  height: 2px;
+  width: 80%;
+  position: relative;
+  content: "";
+  display: block;
+}
+
+.head_underline:after{
+  background-color: #f0af2d;
+  bottom: -10px;
+  height: 2px;
+  width: 40px;
+  position: relative;
+  content: "";
+  display: block;
+}
+
+
+.notVisible {
+  visibility: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;;
+}
+
+
+.scroll {
+  position: fixed;
+  bottom: 25px;
+  z-index: 9999999999;
+  outline: none;
+  background-color: rgb(243 244 246 / 58%);
+  border: 1px solid rgb(51 51 51 / 13%);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.scroll-top {
+  right: 25px;
+}
+/* Navbar */
+
+.navigation {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  transition: all 0.5s ease;
+  transform: translateY(-100%);
+  z-index: 9999;
+}
+
+.navigation--relative {
+  position: relative;
+  top: 0px;
+  transform: translateY(0%);
+}
+
+.navigation.is-fixed {
+  position: fixed;
+  width: 100%;
+  transform: translateY(0%);
+}
+
+
+.nav-item {
+  /* background:
+  linear-gradient(
+    to bottom, var(--mainColor) 0%,
+    var(--mainColor) 100%
+  );
+background-position: 0 100%;
+background-repeat: repeat-x;
+background-size: 1px 1px; */
+transition: background-size .2s;
+}
+
+.nav-link {
+  outline: none;
+}
+
+.nav-item.active{
+  background-size: 4px 50px;
+}
+.active{
+  color: #007aff;
+}
+
+
+.hold-swiper {
+  position: relative;
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #007aff;
+  }
+
+
+
+  /* counter */
+
+  
+

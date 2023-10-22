@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+
+@screen md  {
+
+.btn-text {
+    position: relative;
+  }
+  .btn-text::after {
+    content: "";
+    position: absolute;
+    bottom: -0.01em;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, #212121 50%, rgb(33 33 33 / 0%) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 50%;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .btn-text:hover::after {
+    background-position: 0% 50%;
+  }
+
+    
+}
