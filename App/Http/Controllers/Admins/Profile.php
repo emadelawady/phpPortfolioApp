@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admins;
 
-use Core\Session;
 use Core\View;
 use App\Models\User;
-
+use Core\Auth;
 class Profile
 {
-    public function index() {
+    public function index(): View {
+        
+        $auth = new Auth();
 
-        $user = User::where('email', '=', Auth()->user()->email)->first();
+        $user = User::where('email', '=', $auth->user()->email)->first();
 
-        View::view('admins.profile')->with(['user' => $user]);
+        return View::view('admins.profile')->with('user', $user);
         
     }
 }

@@ -28,7 +28,7 @@
 
     <section class="navigation w-full antialiased bg-white">
 
-        @if ($_SERVER['REQUEST_URI'] == $homepage)
+        @if (is_current_route('homepage'))
         <x-navbar.primary></x-navbar.primary>
         @elseif (($_SERVER['REQUEST_URI'] == $portfolio))
          {{-- <x-navbar.secondary></x-navbar.secondary> --}}

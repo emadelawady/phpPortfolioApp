@@ -65,7 +65,7 @@ class Blade {
             })::getFacadeAccessor()
         );
         
-        //  // Render template with page.blade.php
+         // Render template with page.blade.php
         //  echo $viewFactory->make('page', [
         //      'title' => 'Title',
         //      'text' => 'This is my text!',

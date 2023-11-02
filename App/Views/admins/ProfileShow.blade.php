@@ -13,7 +13,7 @@ test
 
 ?>
 
-<h1><?php echo $params['slug']; ?></h1>
-<h1><?php echo $params['id']; ?></h1>
+<h1>{{ $slug }}</h1>
+<h1>{{ $id }}</h1>
 
 

@@ -3,30 +3,51 @@
 namespace App\Http\Controllers\Users;
 use App\Models\User;
 use Core\Blade;
+use Core\Helper;
 use Core\View;
  
 class UserController {
 
-    public static function index(){
+    public static function index(): View
+    {
 
         $users = User::all();
 
         // return View::blade('page');
-        // return View::view('page')->with(['users' => $users]);
         return View::view('users.index', ['users' => $users]);
 
     }
 
-    public static function show($id){
+    public static function show(mixed $id): View
+    {
 
         // dd($id);
+        // dd($params['id']);
 
 
         $users = User::where('id', '=', $id)->get();
 
-        return View::view('users.show', ['users' => $users]);
+        $user = User::where('id', '=', $id)->first();
+
+        if($id == $user->id){
+
+        // dd($users);
+
+            return View::view('users.show', ['users' => $users]);
+
+        }
+
+        Helper::abort();
+
     }
-    public static function create_user($name, $email, $password)
+
+    public function slugs($params)
+    {
+        dd($params);
+    }
+
+
+    public static function create_user(mixed $name, mixed $email, mixed $password) : User
     {
         $user = User::create(['name'=>$name,'email'=>$email,'password'=>$password]);
         return $user;

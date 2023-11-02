@@ -8,7 +8,8 @@ let conf = {
       homepage : path.resolve(__dirname,'Resources/js/homepage.js'),
       main : path.resolve(__dirname,'Resources/js/main.js'),
       styles : path.resolve(__dirname,'Resources/js/styles.js'),
-      libs : path.resolve(__dirname,'Resources/js/libs.js')
+      libs : path.resolve(__dirname,'Resources/js/libs.js'),
+      app : path.resolve(__dirname,'Resources/js/vue/App.js'),
     },
     output: {
         path: path.join( __dirname, 'public/assets/build' ),

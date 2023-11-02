@@ -101,7 +101,7 @@ transition: background-size .2s;
   background-size: 4px 50px;
 }
 .active{
-  color: #007aff;
+  color: #5850ec;
 }
 
 
@@ -151,7 +151,42 @@ transition: background-size .2s;
 
 
 
-  /* counter */
 
   
+  /* Scroll Bar  */
 
+  /* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+/* button */
+
+/* ::-webkit-scrollbar-button {
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #999; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999; 
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+/* The track NOT covered by the handle.
+::-webkit-scrollbar-track-piece {
+  background: #000; 
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: #999; 
+}
+/* Resizer */
+
+/* ::-webkit-resizer {
+} */
+
+  /* End Scroll Bar  */

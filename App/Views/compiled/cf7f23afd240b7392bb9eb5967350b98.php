@@ -29,7 +29,7 @@
 
     <section class="navigation w-full antialiased bg-white">
 
-        <?php if($_SERVER['REQUEST_URI'] == $homepage): ?>
+        <?php if(is_current_route('homepage')): ?>
         <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.navbar.primary','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('navbar.primary'); ?>

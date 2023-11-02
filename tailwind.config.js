@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
+  darkMode: 'class',
     content: [
         './dist/*.html',
         './*.{html,js,php}',
@@ -8,7 +10,12 @@ module.exports = {
         "./node_modules/flowbite/**/*.js"
     ],
     theme: {
-      extend: {},
+      extend: {
+        colors: {
+          'primary': '#5850ec',
+          'primary-light': '#00bfff'
+        }
+      },
     },
     variants: {
       extend: {},

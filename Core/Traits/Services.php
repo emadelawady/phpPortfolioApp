@@ -8,16 +8,24 @@ use Core\View;
 Trait Services {
 
     public static function redirect() {
-        return new static;
+        return new self;
      }
 
-     public static function to($routeName){
+     public static function to($routeName, $args = []){
 
-        $name = \Core\Helper::route($routeName);
+        $name = \Core\Helper::route($routeName, $args);
 
-        return header("location: " . $name) . exit();
+        header("location: " . $name);
+        exit();
 
 
+     }
+
+     public static function with($data = []){
+
+        return $data;
+
+        // return new static;
      }
 
 

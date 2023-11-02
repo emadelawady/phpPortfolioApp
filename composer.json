@@ -19,7 +19,8 @@
         "illuminate/view": "10.x-dev"
     },
     "require-dev": {
-        "symfony/var-dumper": "6.4.x-dev"
+        "symfony/var-dumper": "6.4.x-dev",
+        "phpstan/phpstan": "1.11.x-dev"
     },
     "autoload": {
         "psr-4": {

@@ -27,6 +27,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@alpinejs/collapse": "^3.13.2",
     "alpinejs": "^3.13.1",
     "flowbite": "^1.8.1",
     "swiper": "^10.3.1"

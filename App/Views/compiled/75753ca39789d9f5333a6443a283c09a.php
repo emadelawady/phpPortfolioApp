@@ -13,8 +13,8 @@ test
 
 ?>
 
-<h1><?php echo $params['slug']; ?></h1>
-<h1><?php echo $params['id']; ?></h1>
+<h1><?php echo e($slug); ?></h1>
+<h1><?php echo e($id); ?></h1>
 
 
 <?php /**PATH C:\laragon\www\phpPortfolioApp\App\Views/admins/ProfileShow.blade.php ENDPATH**/ ?>

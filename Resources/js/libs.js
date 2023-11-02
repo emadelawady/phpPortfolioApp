@@ -1,10 +1,17 @@
 import 'flowbite';
 import Alpine from 'alpinejs'
+
+// import collapse
+import collapse from '@alpinejs/collapse'
+ //init collapse
+ Alpine.plugin(collapse)
  
 window.Alpine = Alpine
  
 Alpine.start()
 
+
+ 
 
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
@@ -93,6 +100,8 @@ var swip = new Swiper(".mSwiper", {
   },
 });
 
+
+
 // const swiper = new Swiper('.swiper', {
 
 //     modules: [Navigation, Pagination, Scrollbar],
@@ -117,3 +126,4 @@ var swip = new Swiper(".mSwiper", {
 //       el: '.swiper-scrollbar',
 //     },
 //   });
+

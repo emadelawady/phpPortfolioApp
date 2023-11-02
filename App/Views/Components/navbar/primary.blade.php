@@ -2,10 +2,10 @@
         <nav x-data="{ isOpen: false }" class="bg-white px-6 shadow dark:bg-gray-800">
             <div class="container px-6 py-3 mx-auto md:flex">
                 <div class="flex items-center justify-between nav-item">
-                    <a href="#home" class="nav-link">
-                        <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+                    <a href="#home" class="nav-link text-orange-600 font-semibold">
+                        {{-- <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt=""> --}}
+                        PHPWebApp
                     </a>
-
                     <!-- Mobile menu button -->
                     <div class="flex lg:hidden">
                         <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
@@ -35,17 +35,6 @@
                         <li class="nav-item list-none btn-text text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
                             <a href="#portfolio" class="nav-link px-2.5 py-2 md:mx-2">Portfolio</a>
                         </li>
-
-                        @php
-                            $portfolio = \Core\Helper::route('portfolio');
-                        @endphp
-                        @if ($_SERVER['REQUEST_URI'] == $portfolio)
-                                
-                            
-                        <li class="nav-item list-none btn-text text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
-                            <a href="#portfolio_filter" class="nav-link px-2.5 py-2 md:mx-2">Portfolio Filter</a>
-                        </li>
-                        @endif
                         <li class="nav-item list-none btn-text text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
                             <a href="#testimonial" class="nav-link px-2.5 py-2 md:mx-2">Testimonial</a>
                         </li>
@@ -57,7 +46,9 @@
                         </li>
                     </div>
 
-                    <x-dropdown-user-data></x-dropdown-user-data>
+                    <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10">
+                        <x-globals.frontend.dropdown-user/>
+                    </div>
                     
                 </div>
             </div>
@@ -69,7 +60,7 @@
     <div class="mx-auto max-w-7xl">
 
         <!-- Main Hero Content -->
-        <div class="container max-w-sm py-32 mx-auto mt-px text-left sm:max-w-md md:max-w-lg sm:px-4 md:max-w-none md:text-center">
+        <div class="container max-w-sm py-32 mx-auto mt-px text-left sm:max-w-md md:max-w-lg sm:px-4 md:text-center">
             <h1 class="text-3xl font-bold leading-10 tracking-tight text-left text-gray-900 md:text-center sm:text-4xl md:text-7xl lg:text-8xl">Start Crafting Your <br class="hidden sm:block"> Next Great Idea</h1>
             <div class="mx-auto mt-5 text-gray-400 md:mt-8 md:max-w-lg md:text-center md:text-xl">Simplifying the creation of landing pages, blog pages, application pages and so much more!</div>
             <div class="flex flex-col items-center justify-center mt-8 space-y-4 text-center sm:flex-row sm:space-y-0 sm:space-x-4">

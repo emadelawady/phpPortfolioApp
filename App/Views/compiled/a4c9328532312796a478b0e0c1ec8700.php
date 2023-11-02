@@ -70,7 +70,7 @@
 				<div class="col-span-full">
 					<label for="bio" class="text-sm">Photo</label>
 					<div class="flex items-center space-x-2">
-						<img src="https://source.unsplash.com/30x30/?random" alt="" class="w-10 h-10 rounded-full dark:bg-gray-500 dark:bg-gray-700">
+						<img src="https://source.unsplash.com/30x30/?random" alt="" class="w-10 h-10 rounded-full dark:bg-gray-700">
 						<button type="button" class="px-4 py-2 border rounded-md dark:border-gray-100">Change</button>
 					</div>
 				</div>

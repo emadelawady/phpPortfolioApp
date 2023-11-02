@@ -12,14 +12,14 @@ use Core\View;
 
 class Login {
     
-    public function index()
+    public function index(): View
     {
         return View::view('auth.login',[
             'errors' => Session::get('errors')
         ]);
     }
 
-    public function store()
+    public function store() : Helper
     {
 
         // dd($GLOBALS);

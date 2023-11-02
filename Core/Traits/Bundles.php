@@ -60,7 +60,6 @@ Trait Bundles {
         }
         
     }
-
     public static function public_path($file)
     {
         self::$actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]";
@@ -69,6 +68,14 @@ Trait Bundles {
 
         echo self::$public_path . $file;
 
+    }
+    public static function get_public_path()
+    {;
+
+        // self::$public_path = 'Public' . DIRECTORY_SEPARATOR;
+        self::$public_path = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR;
+
+        return self::$public_path;
     }
     
     public static function component($file, $attributes = []) {

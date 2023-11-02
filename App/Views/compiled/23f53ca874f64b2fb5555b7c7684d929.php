@@ -1,1 +1,0 @@
-<?php /**PATH C:\laragon\www\phpPortfolioApp\App\Views/components/animated_counter/primary.blade.php ENDPATH**/ ?>

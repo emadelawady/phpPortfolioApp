@@ -1,17 +1,22 @@
 <?php
 
-use Core\App;
-use Core\GetNow;
-use Core\Helper;
+use App\Http\Controllers\Components\Globals\Admins\DropdownUser;
+use App\Http\Controllers\Components\Globals\Admins\Sidebar;
+use App\Http\Controllers\Components\Globals\FrontEnd\DropdownUser as FrontEndDropdownUser;
+use App\Http\Controllers\Components\Globals\Sessions\Success_with_Data;
+use App\Http\Controllers\Components\Hero;
 use Spatie\Ignition\Ignition;
 use Core\Router;
+
+
+
 
 session_start();
 
 require dirname(__DIR__) . '/Core/Functions.php';
 
-require dirname(__DIR__) . '/vendor/autoload.php';
 
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 require dirname(__DIR__) . '/Bootstrap/bootstrap.php';
 
@@ -24,10 +29,35 @@ $dotenv->load();
 Ignition::make()->register();
 
 
-use Core\Blade;
+use Core\Blade as LocalBlade;
 use Core\routesNames;
 
-Blade::handle();
+use Illuminate\Support\Facades\Blade;
+
+
+LocalBlade::handle();
+
+// define Global components
+
+// primary Hero component
+Blade::component('primary_hero', Hero::class);
+
+
+// Global Admins Dropdown User component
+Blade::component('globals.admins.dropdown-user', DropdownUser::class);
+
+// Global Admins Dropdown User component
+Blade::component('globals.admins.sidebar', Sidebar::class);
+
+
+
+// Global Front End Dropdown User component
+Blade::component('globals.frontend.dropdown-user', FrontEndDropdownUser::class);
+
+// Global Front End Dropdown User component
+Blade::component('globals.sessions.success-id', Success_with_Data::class);
+
+
 
 
 
@@ -61,36 +91,57 @@ $router->route($uri, $method);
 
 
 
-// require dirname(__DIR__) . '/Core/router_functions.php';
-
-
-// $get_now = new GetNow($router->globalRoutes);
-
-// dd($helper->test());
-
-// dd($get_now->fa());
-
-// dd($router->globalRoutes);
-
-// dd(dirname(__DIR__) . '/Routes/Web.php');
-// $routes = require dirname(__DIR__) . '/Routes/Web.php';
-
-
-// dd($router->globalRoutes);
-
-// $router->run();
-
-
 Session::unflash();
 
 
-// dd($_SESSION);
 
-// dd($_REQUEST, $_SERVER, $params);
-// $globalRouter = new GlobalRouter();
+// dd($GLOBALS['router']->globalRoutes);
+
+// foreach ($GLOBALS['router']->globalRoutes as $value) {
+
+//     dd($value);
+
+// }
 
 
-// dd($globalRouter);
+// $rou = $GLOBALS['router']->globalRoutes;
+
+// $map = array_map(function($route){
+
+//     return $route['name'];
+  
+
+// }, $GLOBALS['router']->globalRoutes);
+
+
+// $map2 = array_map(function($r) {
+
+
+
+//     return  strstr($r, 'admin.portfolio');
+
+   
+
+// }, $map);
+
+// dd(in_array('admin.portfolio', $map));
+
+
+
+// if(in_array('admin.portfolio', $map2))
+// {
+
+//     return true;
+
+// }
+
+// dd($map2);
+
+
+// $arr = in_array('portfolio', $map);
+
 
 // dd($GLOBALS['router']);
-// Core\Helper::route('fooname');
+
+
+

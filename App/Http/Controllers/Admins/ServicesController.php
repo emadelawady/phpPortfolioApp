@@ -1,0 +1,147 @@
+<?php 
+
+namespace App\Http\Controllers\Admins;
+
+use Core\Auth;
+use Core\Helper;
+use Core\Session;
+use Core\View;
+use App\Models\Portfolio;
+use App\Models\Service;
+
+class ServicesController
+{
+
+    public function index(): View
+    {
+        $auth = new Auth();
+
+        $services = Service::all();
+
+        // Helper::in_route('admin.portfolio.index');
+
+
+        return View::view('admins.services.index')->with('services', $services);
+    }
+
+    public function create()
+    {
+
+        // dd($_SESSION);
+
+
+        return View::blade('admins.services.create');
+    }
+
+    public function store()
+    {
+
+        // dd(get_public_path());
+
+
+        $random = bin2hex(random_bytes(5));
+
+        $file = basename($_FILES["featured_image"]["name"]);
+
+        $database_image = str_replace(" ","_{$random}_", $file);
+
+
+        // Set image placement folder
+        $target_dir = get_public_path();
+
+        // Get file path
+        $target_file = get_public_path() . 'assets/images/portfolio/' . $database_image;
+
+        // Get file extension
+        $imageExt = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        // Allowed file types
+        $allowd_file_ext = array("jpg", "jpeg", "png");
+
+
+
+        // dd($_FILES);
+
+        if(isset($_FILES["featured_image"])){
+            move_uploaded_file($_FILES["featured_image"]["tmp_name"], $target_file);
+        }
+
+
+
+            $service = Service::create([
+                'name' => $_POST['name'],
+                'skills' => $_POST['skills'],
+                'link' => $_POST['link'],
+                'description' => $_POST['description'],
+                'featured_image' => $database_image,
+            ]);
+
+   
+        
+        Session::put('message_with_data',"Saved Successfully!");
+
+        Session::put('last_added_is', $service->id);
+        
+  
+
+        return Helper::redirect()->to('admin.service.create');
+
+
+    }
+
+    public function show($id)
+    {
+
+        $service = Service::where('id', '=', $id)->first();
+
+        return View::view('admins.services.show')->with('service', $service);
+    }
+
+    public function edit($id)
+    {
+
+        $service = Service::where('id', '=', $id)->first();
+
+        return View::view('admins.services.edit')->with('service', $service);
+
+    }
+
+    public function update($id)
+    {
+
+        // dd($id);
+
+        $service = Service::where('id', '=', $id)->first();
+    
+        $update_service = Service::find($service->id);
+
+        $update_service->name = $_POST['name'];
+        $update_service->skills = $_POST['skills'];
+        $update_service->link = $_POST['link'];
+        $update_service->description = $_POST['description'];
+
+         $update_service->save();
+
+         
+        Session::put('message','Saved Successfully');
+        
+
+         return Helper::redirect()->to('admin.service.edit',['id' => $id]);
+
+    }
+
+    public function delete($id)
+    {
+
+        $service = Service::find($id);
+        $service->delete();
+
+
+        Session::put('message_with_data',"Deleted Successfully!");
+
+
+        return Helper::redirect()->to('admin.services.index');
+
+    }
+
+    
+}

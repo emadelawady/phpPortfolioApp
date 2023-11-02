@@ -9,11 +9,13 @@ use Core\View;
 
 class Register {
     protected string $name,$email,$password;
-    public function index() {
+    public function index(): View
+    {
         return View::blade('auth.register');
     }
 
-    public function store(){
+    public function store(): View|Helper
+    {
 
         $this->name = $_POST['name'];
         $this->email = $_POST['email'];

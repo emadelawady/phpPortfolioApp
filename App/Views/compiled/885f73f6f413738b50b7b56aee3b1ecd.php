@@ -2,10 +2,10 @@
         <nav x-data="{ isOpen: false }" class="bg-white px-6 shadow dark:bg-gray-800">
             <div class="container px-6 py-3 mx-auto md:flex">
                 <div class="flex items-center justify-between nav-item">
-                    <a href="#home" class="nav-link">
-                        <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+                    <a href="#home" class="nav-link text-orange-600 font-semibold">
+                        
+                        PHPWebApp
                     </a>
-
                     <!-- Mobile menu button -->
                     <div class="flex lg:hidden">
                         <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
@@ -35,17 +35,6 @@
                         <li class="nav-item list-none btn-text text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
                             <a href="#portfolio" class="nav-link px-2.5 py-2 md:mx-2">Portfolio</a>
                         </li>
-
-                        <?php
-                            $portfolio = \Core\Helper::route('portfolio');
-                        ?>
-                        <?php if($_SERVER['REQUEST_URI'] == $portfolio): ?>
-                                
-                            
-                        <li class="nav-item list-none btn-text text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
-                            <a href="#portfolio_filter" class="nav-link px-2.5 py-2 md:mx-2">Portfolio Filter</a>
-                        </li>
-                        <?php endif; ?>
                         <li class="nav-item list-none btn-text text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
                             <a href="#testimonial" class="nav-link px-2.5 py-2 md:mx-2">Testimonial</a>
                         </li>
@@ -57,20 +46,23 @@
                         </li>
                     </div>
 
-                    <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.dropdown-user-data','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('dropdown-user-data'); ?>
+                    <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10">
+                        <?php if (isset($component)) { $__componentOriginald3180c69b32c04d918b752f9f32060db = $component; } ?>
+<?php $component = App\Http\Controllers\Components\Globals\FrontEnd\DropdownUser::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('globals.frontend.dropdown-user'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Components\Globals\FrontEnd\DropdownUser::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginal71c6471fa76ce19017edc287b6f4508c)): ?>
-<?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
-<?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
+<?php if (isset($__componentOriginald3180c69b32c04d918b752f9f32060db)): ?>
+<?php $component = $__componentOriginald3180c69b32c04d918b752f9f32060db; ?>
+<?php unset($__componentOriginald3180c69b32c04d918b752f9f32060db); ?>
 <?php endif; ?>
+                    </div>
                     
                 </div>
             </div>

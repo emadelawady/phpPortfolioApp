@@ -6,10 +6,10 @@ use Core\View;
 
 class ProfileShow {
 
-    public function index($params){
+    public function index(mixed $slug, $id) {
 
-        // dd($params);
+        // dd($slug, $id);
 
-        return View::view('admins.ProfileShow')->with(['params' => $params]);
+        return View::view('admins.ProfileShow',['id' => $id, 'slug' => $slug]);
     }
 }
