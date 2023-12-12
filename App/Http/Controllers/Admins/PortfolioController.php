@@ -68,7 +68,7 @@ class PortfolioController
 
             $Portfolio = Portfolio::create([
                 'name' => $_POST['name'],
-                'skills' => $_POST['skills'],
+                'built_with' => $_POST['built_with'],
                 'link' => $_POST['link'],
                 'description' => $_POST['description'],
                 'featured_image' => $database_image,
@@ -77,6 +77,7 @@ class PortfolioController
    
         
         Session::put('message_with_data',"Saved Successfully!");
+        Session::put('toast',"Success! Fire");
 
         Session::put('last_added_is', $Portfolio->id);
         

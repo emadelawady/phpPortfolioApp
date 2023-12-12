@@ -41,7 +41,10 @@
                             <a href="{{ is_current_route('testimonials') ? 'javascript:void(0)' : route('testimonials') }}" class="nav-link px-2.5 py-2 md:mx-2 {{ is_current_route('testimonials') ? 'active font-semibold cursor-default' : ''}}">Testimonials</a>
                         </li>
 
-                       
+                        <li class="nav-item list-none text-gray-700 transition-colors duration-300 transform dark:text-gray-200 {{ is_current_route('blog.index') ? '' : 'btn-text'}}">
+                            <a href="{{ is_current_route('blog.index') ? 'javascript:void(0)' : route('blog.index') }}" class="nav-link px-2.5 py-2 md:mx-2 {{ is_current_route('blog.index') ? 'active font-semibold cursor-default' : ''}}">Blog</a>
+                        </li>
+
                     </div>
 
                     <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10">

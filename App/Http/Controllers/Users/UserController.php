@@ -18,7 +18,7 @@ class UserController {
 
     }
 
-    public static function show(mixed $id): View
+    public static function show(mixed $id): View|Helper
     {
 
         // dd($id);

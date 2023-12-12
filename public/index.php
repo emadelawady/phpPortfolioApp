@@ -3,13 +3,18 @@
 use App\Http\Controllers\Components\Globals\Admins\DropdownUser;
 use App\Http\Controllers\Components\Globals\Admins\Sidebar;
 use App\Http\Controllers\Components\Globals\FrontEnd\DropdownUser as FrontEndDropdownUser;
+use App\Http\Controllers\Components\Globals\FrontEnd\PrimaryHero;
 use App\Http\Controllers\Components\Globals\Sessions\Success_with_Data;
+use App\Http\Controllers\Components\Globals\Sessions\Toast;
 use App\Http\Controllers\Components\Hero;
 use Spatie\Ignition\Ignition;
 use Core\Router;
 
 
-
+// use Illuminate\Container\Container;
+// use Illuminate\Events\Dispatcher;
+// use Illuminate\Console\Application;
+// 
 
 session_start();
 
@@ -19,6 +24,7 @@ require dirname(__DIR__) . '/Core/Functions.php';
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 require dirname(__DIR__) . '/Bootstrap/bootstrap.php';
+
 
 
 //load PHP Dot Env
@@ -39,9 +45,6 @@ LocalBlade::handle();
 
 // define Global components
 
-// primary Hero component
-Blade::component('primary_hero', Hero::class);
-
 
 // Global Admins Dropdown User component
 Blade::component('globals.admins.dropdown-user', DropdownUser::class);
@@ -54,8 +57,16 @@ Blade::component('globals.admins.sidebar', Sidebar::class);
 // Global Front End Dropdown User component
 Blade::component('globals.frontend.dropdown-user', FrontEndDropdownUser::class);
 
+
+// Global Front End Primary Hero component
+Blade::component('globals.frontend.hero.primary', PrimaryHero::class);
+
 // Global Front End Dropdown User component
 Blade::component('globals.sessions.success-id', Success_with_Data::class);
+
+
+// Global Front End Toast component
+Blade::component('globals.sessions.toast', Toast::class);
 
 
 

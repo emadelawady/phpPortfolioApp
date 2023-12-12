@@ -18,8 +18,7 @@
 
 
     <section id="hero" class="hero px-2 bg-white md:px-0">
-        {{-- <x-hero.primary></x-hero.primary> --}}
-        <x-primary_hero/>
+        <x-globals.frontend.hero.primary/>
     </section>
 
 </section>

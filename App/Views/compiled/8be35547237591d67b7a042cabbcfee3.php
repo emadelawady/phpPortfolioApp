@@ -18,7 +18,7 @@
 
             <a
               class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring my-2"
-              href="/download"
+              href="<?php echo e($homepage_settings_hero->custom_link_one); ?>"
             >
               <span
                 class="absolute inset-0 border border-primary group-active:border-red-500"
@@ -36,7 +36,7 @@
 
             <a
               class="group relative inline-block my-2 text-sm font-medium text-primary focus:outline-none focus:ring active:text-indigo-500"
-              href="/download"
+              href="<?php echo e($homepage_settings_hero->custom_link_two); ?>"
             >
               <span class="absolute inset-0 border border-current"></span>
               <span

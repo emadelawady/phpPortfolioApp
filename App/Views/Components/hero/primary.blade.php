@@ -23,7 +23,7 @@
 
             <a
               class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring my-2"
-              href="/download"
+              href="{{ $homepage_settings_hero->custom_link_one }}"
             >
               <span
                 class="absolute inset-0 border border-primary group-active:border-red-500"
@@ -40,7 +40,7 @@
 
             <a
               class="group relative inline-block my-2 text-sm font-medium text-primary focus:outline-none focus:ring active:text-indigo-500"
-              href="/download"
+              href="{{ $homepage_settings_hero->custom_link_two   }}"
             >
               <span class="absolute inset-0 border border-current"></span>
               <span
@@ -56,7 +56,7 @@
     </div>
     <div class="w-full md:w-1/2">
       <div class="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl" data-rounded="rounded-xl" data-rounded-max="rounded-full">
-          <img class="" src="{{ public_path('assets/images/person.jpg') }}">
+          <img class="w-24 h-24" src="{{ public_path('assets/images/person.jpg') }}">
         </div>
     </div>
   </div>

@@ -143,5 +143,10 @@
 
 		<x-globals.sessions.success-id />
 
+
+
+		<x-globals.sessions.toast />
+
+
 </section>
 </x-layouts.admins.adminLayout>

@@ -13,26 +13,6 @@
 
                 {{ Core\Helper::asset('build/styles.js') }}
 
-        <style>
-            [x-cloak] {
-                display: none !important;
-            }
-        </style>
-
-
-    <script>
-    // deal with Dark mode via Tailwind Css
-
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-        } else {
-        document.documentElement.classList.remove('dark')
-        }
-
-    </script>
-
-
-
 @php
 $route = route('admin.dashboard.index',['req' => 'aa']);
 @endphp
@@ -64,7 +44,7 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
 
     </head>
 
-    <body class="antialiased">
+    <body x-cloak x-data="{darkMode: $persist(false)}" :class="{'dark': darkMode === true }" class="antialiased">
 
 
         <x-admins.navbar.primary></x-admins.navbar.primary>

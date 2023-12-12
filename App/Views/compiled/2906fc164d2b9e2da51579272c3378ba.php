@@ -1,77 +1,25 @@
-<!-- This is the button that toggles the theme -->
-<button x-ref="content" class="js-theme-toggle">
-    <span class="bg-primary dark:bg-red-400 p-1 px-2 rounded-full font-semibold tracking-wide block dark:hidden text-white">
-
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-        </svg>
-
-    
-    </span>
-    <span class="bg-primary dark:bg-red-400 p-1 px-2 rounded-full font-semibold tracking-wide hidden dark:block text-slate-900">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-        </svg>
-
-    </span>
+<button @click="darkMode=!darkMode" type="button" class="relative inline-flex flex-shrink-0 h-6 mr-5 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer bg-zinc-200 dark:bg-zinc-700 w-11 focus:outline-none focus:ring-1 focus:ring-neutral-300 focus:ring-offset-1" role="switch" aria-checked="false">
+   <span class="sr-only">Use setting</span>
+   <span class="relative inline-block w-5 h-5 transition duration-500 ease-in-out transform translate-x-0 bg-white rounded-full shadow pointer-events-none dark:translate-x-5 ring-0">
+      <span class="absolute inset-0 flex items-center justify-center w-full h-full transition-opacity duration-500 ease-in opacity-100 dark:opacity-0 dark:duration-100 dark:ease-out" aria-hidden="true">
+         
+         <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun w-4 h-4 text-neutral-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+         </svg>
+      </span>
+      <span class="absolute inset-0 flex items-center justify-center w-full h-full transition-opacity duration-100 ease-out opacity-0 dark:opacity-100 dark:duration-200 dark:ease-in" aria-hidden="true">
+         
+         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon w-4 h-4 text-neutral-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+         </svg>
+      </span>
+   </span>
 </button>
-
-  
   
   
     <!-- This is the button that toggles that reverts to the system theme -->
   
-
-
-  <script>
-  
-  
-            // Start by getting the current theme value in localStorage
-        let theme = localStorage.getItem('theme');
-                
-        // Grab the class of the element that you want users to click to toggle dark and light theme/modes
-        const themeToggle = document.querySelector('.js-theme-toggle')
-
-        // Grab the class of the element that you want users to click on to revert to their system theme/mode
-        const themeRemove = document.querySelector('.js-theme-remove')
-
-        // Adds ".dark" to the <html> element, and adds "theme: dark" to localStorage
-        const goDark = function() {
-            document.documentElement.classList.add('dark')
-            localStorage.setItem('theme', 'dark');
-        }
-
-        // Adds ".dark" to the <html> element, and adds "theme: dark" to localStorage
-        const goLight = function() {
-            document.documentElement.classList.remove('dark')
-            localStorage.setItem('theme', 'light');
-        }
-
-        // Removes the theme form local storage, and matches the mode to the user's default system theme/mode
-        const goSystem = function() {
-            localStorage.removeItem('theme')
-
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        }   
-
-        // Toggling the theme when the element with `.js-theme-toggle` is clicked
-        themeToggle.addEventListener('click', function() {
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                goLight();
-            } else {
-                goDark();
-            }
-        });
-
-        if(themeRemove){
-            // Reverting the theme to default when the element with `.js-theme-remove` is clicked
-            themeRemove.addEventListener('click', function() {
-                goSystem();
-            });           
-        }
-
-  </script><?php /**PATH C:\laragon\www\phpPortfolioApp\App\Views/components/locals/admins/theme-switch.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\laragon\www\phpPortfolioApp\App\Views/components/locals/admins/theme-switch.blade.php ENDPATH**/ ?>

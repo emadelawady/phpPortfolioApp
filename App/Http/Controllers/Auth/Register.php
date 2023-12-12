@@ -3,15 +3,21 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Forms\RegisterForm;
+use App\Http\Forms\UserRegisterForm;
 use App\Models\User;
 use Core\Helper;
 use Core\View;
+use Core\Validation\Validator as ValidationValidator;
+use Core\Session;
+
 
 class Register {
     protected string $name,$email,$password;
     public function index(): View
     {
-        return View::blade('auth.register');
+        return View::view('auth.register',[
+            'errors' => Session::get('errors')
+        ]);
     }
 
     public function store(): View|Helper
@@ -21,45 +27,120 @@ class Register {
         $this->email = $_POST['email'];
         $this->password = $_POST['password'];
 
-        // dd($_POST);
 
-        //validate
+        /*
+        =
+        =  NEW Validation WAY
+        =
+        */
 
-        $form = new RegisterForm();
 
-        if(!$form->validate($this->name,$this->email,$this->password)){
 
-            return View::view('auth.register', ['errors' => $form->errors()]);
+        $UserRegisterForm = new UserRegisterForm($_POST['name'],$_POST['email'], $_POST['password']);
+
+        $validator = new ValidationValidator();
+
+        $validator->validate($UserRegisterForm,[
+            'emil','password'
+        ]);
+
+        // dd($validator);
+
+        $err = $validator->getErrors();
+
+        // dd($err);
+
+
+        if(empty($err)){
+
+            $user = User::where('email', '=', $this->email)->exists();
+
+            if($user) {
+    
+                $errors['already_exists'] = 'this account is already exists, ';
+                return View::view('auth.register', ['errors' => $errors]);
+    
+            } else{
+    
+                User::create([
+                    'name' => $this->name,
+                    'email' => $this->email,
+                    'password' => password_hash($this->password, PASSWORD_DEFAULT)
+                ]);
+    
+                $_SESSION['user'] = [
+                    'name' => $this->name,
+                    'email' => $this->email
+                ];
+    
+                return Helper::redirect()->to('homepage');
+            }
+        
+
 
         }
 
 
-        $user = User::where('email', '=', $this->email)->exists();
 
-        // dd($user);
+        Session::flash('errors', $err);
 
-        if($user) {
 
-            $errors['already_exists'] = 'this account is already exists, ';
-            return View::view('auth.register', ['errors' => $errors]);
-        } else{
+        // dd($_SESSION);
 
-            User::create([
-                'name' => $this->name,
-                'email' => $this->email,
-                'password' => password_hash($this->password, PASSWORD_DEFAULT)
-            ]);
+        Session::flash('old', [
+            'name' => $_POST['name'],
+            'email' => $_POST['email'],
+        ]);
 
-            $_SESSION['user'] = [
-                'name' => $this->name,
-                'email' => $this->email
-            ];
 
-            return Helper::redirect()->to('homepage');
-            // return heade/r("location: /") . exit();
-        }
+        return Helper::redirect()->to('register');
 
-        // dd($user);
+
+
+        // dd($err);
+
+
+
+
+
+        /*
+        =
+        =  OLD Validation WAY
+        =
+        */
+
+
+        // $form = new RegisterForm();
+
+        // if(!$form->validate($this->name,$this->email,$this->password)){
+
+        //     return View::view('auth.register', ['errors' => $form->errors()]);
+
+        // }
+
+
+        // $user = User::where('email', '=', $this->email)->exists();
+
+        // if($user) {
+
+        //     $errors['already_exists'] = 'this account is already exists, ';
+        //     return View::view('auth.register', ['errors' => $errors]);
+
+        // } else{
+
+        //     User::create([
+        //         'name' => $this->name,
+        //         'email' => $this->email,
+        //         'password' => password_hash($this->password, PASSWORD_DEFAULT)
+        //     ]);
+
+        //     $_SESSION['user'] = [
+        //         'name' => $this->name,
+        //         'email' => $this->email
+        //     ];
+
+        //     return Helper::redirect()->to('homepage');
+        // }
 
 
         

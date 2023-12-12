@@ -116,3 +116,63 @@ function Auth()
 }
 
 
+
+
+
+function pre()
+{ ?>
+
+<div style="
+        background: #000;
+        display: flex;
+        color: #1fe91f;
+        padding: 6px;
+        font-size: 18px;
+    ">
+<pre style="color: unset;font-size: unset;">
+    
+    <?php $arr = (array) func_get_args(); ?>
+
+
+    <?php if(isset($arr[0])) { ?>
+
+    (1) _ "<?php print_r($arr[0] ?? false) . '<br>'; ?>"
+    
+    <?php } ?>
+
+
+    <?php if(isset($arr[1])) { ?>
+
+    (2) _ "<?php print_r($arr[1] ?? false) . '<br>'; ?>"
+
+    <?php } ?>
+
+
+    <?php if(isset($arr[2])) { ?>
+
+    (3) _ "<?php print_r($arr[2] ?? null) . '<br>'; ?>"
+
+    <?php } ?>
+
+</pre>
+
+</div>
+
+<?php
+
+}
+
+
+
+function check_validation($args)
+{
+
+        $args = array_reduce($args, 'array_merge', array());
+
+        foreach($args as $val):
+
+            echo '<p class="mt-3 text-xs text-red-600">' . $val . '</p>';
+            
+        endforeach;
+
+}

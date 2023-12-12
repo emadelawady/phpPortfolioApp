@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../eloquent"
+		},
+		{
+			"path": "../../../../.."
+		},
+		{
+			"path": "../../../../../../phpWebApp"
+		},
+		{
+			"path": "../../../../../../phpRouterTest"
+		},
+		{
+			"path": "../../../../../../jobsPosting"
+		}
+	],
+	"settings": {}
+}

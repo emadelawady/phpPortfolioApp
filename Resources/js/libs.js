@@ -1,5 +1,6 @@
 import 'flowbite';
 import Alpine from 'alpinejs'
+import persist from '@alpinejs/persist'
 
 // import collapse
 import collapse from '@alpinejs/collapse'
@@ -8,8 +9,9 @@ import collapse from '@alpinejs/collapse'
  
 window.Alpine = Alpine
  
-Alpine.start()
+Alpine.plugin(persist)
 
+Alpine.start()
 
  
 

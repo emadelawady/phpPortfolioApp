@@ -165,6 +165,25 @@
 <?php unset($__componentOriginal3bf557f4b1f8c83e51ed613d2e0a5352); ?>
 <?php endif; ?>
 
+
+
+		<?php if (isset($component)) { $__componentOriginal1f9e4b4d459ea96a3312e4b89f3ac081 = $component; } ?>
+<?php $component = App\Http\Controllers\Components\Globals\Sessions\Toast::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('globals.sessions.toast'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Components\Globals\Sessions\Toast::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal1f9e4b4d459ea96a3312e4b89f3ac081)): ?>
+<?php $component = $__componentOriginal1f9e4b4d459ea96a3312e4b89f3ac081; ?>
+<?php unset($__componentOriginal1f9e4b4d459ea96a3312e4b89f3ac081); ?>
+<?php endif; ?>
+
+
 </section>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
