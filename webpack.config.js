@@ -18,7 +18,7 @@ let conf = {
         clean: true
     },
     devServer: {
-      watchFiles: ['App/Views/**/*.php', 'public/**/*'],
+      watchFiles: ['Resources/Views/**/*.php', 'public/**/*'],
       host: 'phpportfolioapp.local',
       proxy: {
         '**': {

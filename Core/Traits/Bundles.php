@@ -15,13 +15,18 @@ Trait Bundles {
         // other wise we print the actual link with out :8080 with Apache not webpack
         */
 
+        // dd($_SERVER['HTTP_CONNECTION']);
+
         if($_SERVER['HTTP_CONNECTION'] === 'close') {
 
-            self::$actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]:8080";
+            self::$actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]";
+
 
         } else{
 
-            self::$actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]";
+            self::$actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]:8080";
+
+
 
         }
 

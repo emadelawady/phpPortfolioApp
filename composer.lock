@@ -609,12 +609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "2cce84c568b21d81e5d686e9bb3a6a97b92bb924"
+                "reference": "dff792e535f4a581d89b027bed5bb26972a5c056"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/2cce84c568b21d81e5d686e9bb3a6a97b92bb924",
-                "reference": "2cce84c568b21d81e5d686e9bb3a6a97b92bb924",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/dff792e535f4a581d89b027bed5bb26972a5c056",
+                "reference": "dff792e535f4a581d89b027bed5bb26972a5c056",
                 "shasum": ""
             },
             "require": {
@@ -670,7 +670,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-12-12T16:36:26+00:00"
+            "time": "2023-12-13T12:12:40+00:00"
         },
         {
             "name": "illuminate/events",
@@ -3414,12 +3414,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "ff0865e84c2296995ecdd472e5ac62d82c87077d"
+                "reference": "57cc76bb41632805985d726b721d9c53a92ddfbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ff0865e84c2296995ecdd472e5ac62d82c87077d",
-                "reference": "ff0865e84c2296995ecdd472e5ac62d82c87077d",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/57cc76bb41632805985d726b721d9c53a92ddfbc",
+                "reference": "57cc76bb41632805985d726b721d9c53a92ddfbc",
                 "shasum": ""
             },
             "require": {
@@ -3469,7 +3469,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-12T16:58:09+00:00"
+            "time": "2023-12-13T14:23:01+00:00"
         }
     ],
     "aliases": [],

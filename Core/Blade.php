@@ -31,8 +31,8 @@ class Blade {
         
         // Configuration
         // Note that you can set several directories where your templates are located
-        $pathsToTemplates = [dirname(__DIR__) . '/App/Views'];
-        $pathToCompiledTemplates = dirname(__DIR__) . '/App/Views/compiled';
+        $pathsToTemplates = [dirname(__DIR__) . '/Resources/Views'];
+        $pathToCompiledTemplates = dirname(__DIR__) . '/Resources/Views/compiled';
         
         // Dependencies
         $filesystem = new \Illuminate\Filesystem\Filesystem;
