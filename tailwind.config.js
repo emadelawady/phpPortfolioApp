@@ -5,7 +5,7 @@ module.exports = {
     content: [
         './dist/*.html',
         './*.{html,js,php}',
-        "./Resources/Views/**/*.php",
+        "./resources/views/**/*.php",
         "./public/*.php",
         "./node_modules/flowbite/**/*.js"
     ],

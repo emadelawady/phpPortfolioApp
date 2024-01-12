@@ -8,6 +8,7 @@ use App\Models\User;
 use Core\Authenticator;
 use Core\Helper;
 use Core\Session;
+use Core\Validation\Enums\EnumRules;
 use Core\Validation\Validator as ValidationValidator;
 use Core\Validator;
 use Core\View;
@@ -53,6 +54,8 @@ class Login {
 
         $err = $validator->getErrors();
 
+        // dd($err);
+
 
         // $email = $validator->check('email', $err['email']);
         // $password = $validator->check('password', $err['password']);
@@ -62,11 +65,18 @@ class Login {
 
 
         if(empty($err)){
+            
 
             if((new Authenticator)->attempt($email,$password)){
 
                 return Helper::redirect()->to('homepage');
 
+            } else{
+
+                $err[strtolower(EnumRules::Email->name)][] = [
+                    EnumRules::WrongData->name => EnumRules::WrongData->value
+                ];
+                
             }
 
         }

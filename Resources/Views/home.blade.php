@@ -6,17 +6,13 @@
 </svg>
 </button>
 
-
 {{-- @dd($homepage_settings_hero) --}}
 
     <section class="shadow border-b">
         <x-navbar.primary-links></x-navbar.primary-links>
     </section>
 
-    
 <section id="home" class="home scroll-spy flex flex-col items-stretch bg-grey-lighter min-h-screen">
-
-
 
     <section id="hero" class="hero px-2 bg-white md:px-0">
         <x-globals.frontend.hero.primary/>

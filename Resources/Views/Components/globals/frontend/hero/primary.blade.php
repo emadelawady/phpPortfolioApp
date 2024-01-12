@@ -8,6 +8,7 @@
           <span class="block text-left">{{ $homepage_settings_hero->head_one }}</span>
           <span class="block text-indigo-600 xl:inline" data-primary="indigo-600">{{ $homepage_settings_hero->head_two }}</span>
         </h1>
+
         <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
           {{ $homepage_settings_hero->description_one }}  
         </p>

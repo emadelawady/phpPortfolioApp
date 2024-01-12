@@ -9,6 +9,7 @@ use Core\Helper;
 use Core\View;
 use Core\Validation\Validator as ValidationValidator;
 use Core\Session;
+use Core\Validation\Enums\EnumRules;
 
 
 class Register {
@@ -57,7 +58,8 @@ class Register {
 
             if($user) {
     
-                $errors['already_exists'] = 'this account is already exists, ';
+                $errors[EnumRules::AlreadyExists->name] = EnumRules::AlreadyExists->value;
+
                 return View::view('auth.register', ['errors' => $errors]);
     
             } else{
@@ -75,7 +77,6 @@ class Register {
     
                 return Helper::redirect()->to('homepage');
             }
-        
 
 
         }

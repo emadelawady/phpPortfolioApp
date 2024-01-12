@@ -30,7 +30,6 @@ class Validator
         // instantiate a $reflector using new ReflectionClass($object)
         $reflector = new ReflectionClass($object);
 
-        
 
         // loop over the reflector properties
         foreach ($reflector->getProperties() as $property) {
@@ -54,59 +53,13 @@ class Validator
                 
                 $validator = $attribute->newInstance()->getValidator();
 
-                // dd($validator->validate());
-
-                // pre($validator);
-
-                // pre($property->getValue($object));
-
-
-                // Ask if the property does not valid
-             
-
-                    // dd(strlen($property->getValue($object)));
-
-
 
                     if(!$validator->validate($property->getValue($object))){
-
-                
-
-                        $object_to_array = get_object_vars($object);
-
-                        $array_keys = array_keys($object_to_array);
-
-                        // dd($object_to_array);
-
-                        // pre($validator->rule);
-
-
-
-                        // $match = match ($property->getName()) { 
-                        //     $property->getName() => $property->getName() .' ' . $attribute->getName()
-                        // }; 
-
-                        // pre($match);
-
-                        
-
-                        // $this->errors[$property->getName()][] = sprintf(
-                        //     "Invalid Value '%s' is '%s' Validation.",
-                        //     $property->getName(),
-                        //     $validator->rule
-                        // );
-
-                        // pre($validator->rule);
-                        // pre($validator->message);
+     
 
                         $this->errors[$property->getName()][] = [
                             $validator->rule => $validator->message
                         ];
-
-                        // $this->errors = array_reduce($this->errors, 'array_merge', array());
-
-                        // array_merge_recursive($this->errors);
-                        // $this->errors = array_merge($this->errors);
 
 
             }

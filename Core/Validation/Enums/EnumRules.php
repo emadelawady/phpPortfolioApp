@@ -10,4 +10,6 @@ enum EnumRules : string
     case Max = 'is Max Available Characters';
     case Min = 'is Min Available Characters';
     case Email = 'Make Sure to Enter A valid Email Address';
+    case AlreadyExists = 'User Already Exist, You Can ';
+    case WrongData = 'Email & password didn\'t Match';
 }

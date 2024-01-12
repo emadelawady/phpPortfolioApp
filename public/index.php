@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\Components\Globals\Admins\DropdownUser;
-use App\Http\Controllers\Components\Globals\Admins\Sidebar;
-use App\Http\Controllers\Components\Globals\FrontEnd\DropdownUser as FrontEndDropdownUser;
-use App\Http\Controllers\Components\Globals\FrontEnd\PrimaryHero;
-use App\Http\Controllers\Components\Globals\Sessions\Success_with_Data;
-use App\Http\Controllers\Components\Globals\Sessions\Toast;
-use App\Http\Controllers\Components\Hero;
+
+use Core\RegisteredComponents;
 use Spatie\Ignition\Ignition;
 use Core\Router;
 
+
+// This would be your framework default bootstrap file
+
+// During dev, this file would be hit when accessing your local host, like:
+// http://vite-php-setup.test
+
+require_once __DIR__ . '/helpers.php';
 
 // use Illuminate\Container\Container;
 // use Illuminate\Events\Dispatcher;
@@ -34,41 +36,12 @@ $dotenv->load();
 // Error Handler
 Ignition::make()->register();
 
-
-use Core\Blade as LocalBlade;
 use Core\routesNames;
 
-use Illuminate\Support\Facades\Blade;
 
-
-LocalBlade::handle();
 
 // define Global components
-
-
-// Global Admins Dropdown User component
-Blade::component('globals.admins.dropdown-user', DropdownUser::class);
-
-// Global Admins Dropdown User component
-Blade::component('globals.admins.sidebar', Sidebar::class);
-
-
-
-// Global Front End Dropdown User component
-Blade::component('globals.frontend.dropdown-user', FrontEndDropdownUser::class);
-
-
-// Global Front End Primary Hero component
-Blade::component('globals.frontend.hero.primary', PrimaryHero::class);
-
-// Global Front End Dropdown User component
-Blade::component('globals.sessions.success-id', Success_with_Data::class);
-
-
-// Global Front End Toast component
-Blade::component('globals.sessions.toast', Toast::class);
-
-
+(new RegisteredComponents())->boot();
 
 
 
@@ -103,56 +76,6 @@ $router->route($uri, $method);
 
 
 Session::unflash();
-
-
-
-// dd($GLOBALS['router']->globalRoutes);
-
-// foreach ($GLOBALS['router']->globalRoutes as $value) {
-
-//     dd($value);
-
-// }
-
-
-// $rou = $GLOBALS['router']->globalRoutes;
-
-// $map = array_map(function($route){
-
-//     return $route['name'];
-  
-
-// }, $GLOBALS['router']->globalRoutes);
-
-
-// $map2 = array_map(function($r) {
-
-
-
-//     return  strstr($r, 'admin.portfolio');
-
-   
-
-// }, $map);
-
-// dd(in_array('admin.portfolio', $map));
-
-
-
-// if(in_array('admin.portfolio', $map2))
-// {
-
-//     return true;
-
-// }
-
-// dd($map2);
-
-
-// $arr = in_array('portfolio', $map);
-
-
-// dd($GLOBALS['router']);
 
 
 

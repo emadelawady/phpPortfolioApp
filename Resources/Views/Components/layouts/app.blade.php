@@ -9,7 +9,12 @@
 
         <title>{{ $_ENV['APP_NAME'] }}</title>
 
-                {{ Core\Helper::asset('build/styles.js') }}
+     
+        {!! vite('js/styles.js') !!}
+
+        {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+
+                {{-- {{ Core\Helper::asset('build/styles.js') }} --}}
 
         <style>
             [x-cloak] {
@@ -40,15 +45,17 @@
             
     <x-footer.primary></x-footer.primary>
 
-            {{ Core\Helper::asset('build/libs.js') }} 
+            {{-- {{ Core\Helper::asset('build/libs.js') }}  --}}
+            {!! vite('js/libs.js') !!}
 
 @if ($_SERVER['REQUEST_URI'] == $homepage)
-            {{ Core\Helper::asset('build/homepage.js') }}
+            {{-- {{ Core\Helper::asset('build/homepage.js') }} --}}
+    {!! vite('js/homepage.js') !!}
 
 @elseif (($_SERVER['REQUEST_URI'] == $portfolio))
     {{-- <x-navbar.secondary></x-navbar.secondary> --}}
-            {{ Core\Helper::asset('build/main.js') }}
-
+            {{-- {{ Core\Helper::asset('build/main.js') }} --}}
+    {!! vite('js/main.js') !!}
 @endif
 
     </body>

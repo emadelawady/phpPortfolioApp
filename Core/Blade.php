@@ -8,6 +8,7 @@ use Core\IlluminateApp;
 class Blade {
 
     public static $viewFactory;
+    public static $container;
 
     private static $attr;
     private static $f;
@@ -23,20 +24,20 @@ class Blade {
          * @source https://github.com/illuminate/view
          */
 
-        $container = IlluminateApp::getInstance();
+        self::$container = IlluminateApp::getInstance();
 
         // we have to bind our app class to the interface
         // as the blade compiler needs the `getNamespace()` method to guess Blade component FQCNs
-        $container->instance(\Illuminate\Contracts\Foundation\Application::class, $container);
+        self::$container->instance(\Illuminate\Contracts\Foundation\Application::class, self::$container);
         
         // Configuration
         // Note that you can set several directories where your templates are located
-        $pathsToTemplates = [dirname(__DIR__) . '/Resources/Views'];
-        $pathToCompiledTemplates = dirname(__DIR__) . '/Resources/Views/compiled';
+        $pathsToTemplates = [dirname(__DIR__) . '/resources/views'];
+        $pathToCompiledTemplates = dirname(__DIR__) . '/storage/views/compiled';
         
         // Dependencies
         $filesystem = new \Illuminate\Filesystem\Filesystem;
-        $eventDispatcher = new \Illuminate\Events\Dispatcher($container);
+        $eventDispatcher = new \Illuminate\Events\Dispatcher(self::$container);
         
         // Create View Factory capable of rendering PHP and Blade templates
         $viewResolver = new \Illuminate\View\Engines\EngineResolver;
@@ -48,17 +49,17 @@ class Blade {
         
         $viewFinder = new \Illuminate\View\FileViewFinder($filesystem, $pathsToTemplates);
         $viewFactory = new \Illuminate\View\Factory($viewResolver, $viewFinder, $eventDispatcher);
-        $viewFactory->setContainer($container);
-        \Illuminate\Support\Facades\Facade::setFacadeApplication($container);
-        $container->instance(\Illuminate\Contracts\View\Factory::class, $viewFactory);
-        $container->alias(
+        $viewFactory->setContainer(self::$container);
+        \Illuminate\Support\Facades\Facade::setFacadeApplication(self::$container);
+        self::$container->instance(\Illuminate\Contracts\View\Factory::class, $viewFactory);
+        self::$container->alias(
             \Illuminate\Contracts\View\Factory::class, 
             (new class extends \Illuminate\Support\Facades\View {
                 public static function getFacadeAccessor() { return parent::getFacadeAccessor(); }
             })::getFacadeAccessor()
         );
-        $container->instance(\Illuminate\View\Compilers\BladeCompiler::class, $bladeCompiler);
-        $container->alias(
+        self::$container->instance(\Illuminate\View\Compilers\BladeCompiler::class, $bladeCompiler);
+        self::$container->alias(
             \Illuminate\View\Compilers\BladeCompiler::class, 
             (new class extends \Illuminate\Support\Facades\Blade {
                 public static function getFacadeAccessor() { return parent::getFacadeAccessor(); }

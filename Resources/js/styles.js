@@ -1,3 +1,7 @@
-import '../css/tailwind.css'
-import 'swiper/swiper-bundle.css';
-import '../css/main.css'
+// import './../css/tailwind.css'
+// import 'swiper/swiper-bundle.css';
+// import '../css/main.css'
+
+
+// Styles
+import '../css/css'

@@ -106,8 +106,8 @@
         </div>
 
         <div class="w-full flex items-center justify-center py-4 text-center bg-gray-50 dark:bg-gray-700">
-            @if (isset($errors['already_exists']))
-              <p class="mt-3 text-xs text-red-600">{{ $errors['already_exists'] }}</p>
+            @if (isset($errors['AlreadyExists']))
+              <p class="mt-3 text-xs text-red-600">{{ $errors['AlreadyExists'] }}</p>
               <p class="mx-1 mt-3 text-xs text-blue-600">
                 <a href="{{ route('login')}}">
                   Login?

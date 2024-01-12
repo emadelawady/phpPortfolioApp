@@ -9,7 +9,7 @@
 
         <title>{{ $_ENV['APP_NAME'] }}</title>
 
-                {{ Core\Helper::asset('build/styles.js') }}
+                {!! vite('js/styles.js') !!}
 
         <style>
             [x-cloak] {
@@ -25,7 +25,7 @@
             {{ $slot }}
 
 
-            {{ Core\Helper::asset('build/main.js') }}
-            {{ Core\Helper::asset('build/libs.js') }}
+            {!! vite('js/main.js') !!}
+            {!! vite('js/libs.js') !!}
     </body>
 </html>

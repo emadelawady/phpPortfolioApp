@@ -11,8 +11,7 @@
 
         <title>{{ $_ENV['APP_NAME'] }}</title>
 
-                {{ Core\Helper::asset('build/styles.js') }}
-
+                {!! vite('js/styles.js') !!}
 @php
 $route = route('admin.dashboard.index',['req' => 'aa']);
 @endphp
@@ -60,9 +59,10 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
             
         </div>
 
-        {{ Core\Helper::asset('build/libs.js') }} 
+        {!! vite('js/libs.js') !!} 
+        
 
-        {{ Core\Helper::asset('build/main.js') }}
+        {!! vite('js/main.js') !!}
 
 
 

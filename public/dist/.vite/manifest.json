@@ -1,0 +1,37 @@
+{
+  "_vendor-MViPgyIV.js": {
+    "file": "assets/vendor-MViPgyIV.js"
+  },
+  "js/homepage.js": {
+    "file": "assets/homepage-HF9-Gkhw.js",
+    "isEntry": true,
+    "src": "js/homepage.js"
+  },
+  "js/libs.js": {
+    "css": [
+      "assets/libs-xbtvTMtQ.css"
+    ],
+    "file": "assets/libs-DmaPFMGr.js",
+    "imports": [
+      "_vendor-MViPgyIV.js"
+    ],
+    "isEntry": true,
+    "src": "js/libs.js"
+  },
+  "js/main.js": {
+    "file": "assets/main-CfdSF6Nk.js",
+    "imports": [
+      "_vendor-MViPgyIV.js"
+    ],
+    "isEntry": true,
+    "src": "js/main.js"
+  },
+  "js/styles.js": {
+    "css": [
+      "assets/styles-QEsa4wKB.css"
+    ],
+    "file": "assets/styles-DIsj2D5o.js",
+    "isEntry": true,
+    "src": "js/styles.js"
+  }
+}

@@ -12,9 +12,11 @@ class Authenticator {
 
         // dd($user_exists);
 
+
         $user = User::where('email', '=', $email)->first();
 
-        if($user_exists) {
+
+        if($user_exists){
 
             if (password_verify($password, $user->password)) {
 
@@ -30,6 +32,7 @@ class Authenticator {
             }
             
         }
+
         
         return false;
 

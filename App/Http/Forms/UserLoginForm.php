@@ -2,9 +2,11 @@
 
 namespace App\Http\Forms;
 
+use Core\Validation\Rules\MatchPassword;
 use Core\Validation\Rules\MaxCharacters;
 use Core\Validation\Rules\MinCharacters;
 use Core\Validation\Rules\Required;
+use Core\Validation\Rules\UserAlreadyExists;
 use Core\Validation\Rules\ValidEmail;
 
 

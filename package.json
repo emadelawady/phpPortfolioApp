@@ -2,11 +2,11 @@
   "name": "phpportfolioapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --mode development --progress",
-    "build": "cross-env NODE_ENV=production webpack --mode production --progress",
-    "watch": "cross-env NODE_ENV=development webpack-dev-server --hot --open"
+    "dev": "cross-env APP_ENV=development vite",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
@@ -14,17 +14,13 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.8.1",
     "daisyui": "^3.9.2",
-    "postcss": "^8.4.31",
-    "postcss-loader": "^7.3.3",
-    "postcss-preset-env": "^9.2.0",
-    "style-loader": "^3.3.3",
-    "tailwindcss": "^3.3.3",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.0",
+    "vite-plugin-live-reload": "^3.0.2"
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.13.2",
