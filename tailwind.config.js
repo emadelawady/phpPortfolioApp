@@ -5,9 +5,11 @@ module.exports = {
     content: [
         './dist/*.html',
         './*.{html,js,php}',
-        "./resources/views/**/*.php",
         "./public/*.php",
-        "./node_modules/flowbite/**/*.js"
+        "./node_modules/flowbite/**/*.js",
+        './storage/views/**/*.php',
+        './resources/views/**/*.blade.php',
+        "./resources/**/*.js",
     ],
     theme: {
       extend: {

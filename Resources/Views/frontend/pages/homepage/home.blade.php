@@ -15,51 +15,42 @@
 <section id="home" class="home scroll-spy flex flex-col items-stretch bg-grey-lighter min-h-screen">
 
     <section id="hero" class="hero px-2 bg-white md:px-0">
-        <x-globals.frontend.hero.primary/>
+        <x-frontend.homepage.hero/>
     </section>
 
 </section>
 
 <section id="about" class="about scroll-spy bg-white dark:bg-gray-900">
 
-    <x-about.primary></x-about.primary>
+    <x-frontend.homepage.about />
 
 </section>
 
 <section id="services" class="services scroll-spy bg-white dark:bg-gray-900">
 
-    <x-services.primary></x-services.primary>
+    <x-frontend.homepage.services />
 
 </section>
-
-
-{{-- <x-slider.primary></x-slider.primary> --}}
 
 
 <section id="portfolio" class="portfolio scroll-spy pt-10 bg-white dark:bg-gray-900">
-    <x-portfolio.primary></x-portfolio.primary>
+    <x-frontend.homepage.portfolio />
 </section>
-
 
 
 <section id="testimonial" class="testimonial scroll-spy bg-white dark:bg-gray-900">
 
-    <x-testimonials.primary></x-testimonials.primary>
+    <x-frontend.homepage.testimonials />
 
 </section>
 
 <section id="call_to_action" class="call_to_action scroll-spy py-10 my-10 bg-white dark:bg-gray-900">
-    <x-call_to_action.primary></x-call_to_action.primary>
+    <x-frontend.homepage.call-to-action />
 </section>
 
 
-
-{{-- <x-animated_counter.primary></x-animated_counter.primary> --}}
-
 <section id="contact" class="contact scroll-spy py-10 my-10 bg-white dark:bg-gray-900">
-
-<x-contact.primary></x-contact.primary>
-
+    <x-frontend.homepage.contact />
 </section>
 
 </x-layouts.app>

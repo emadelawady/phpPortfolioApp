@@ -9,12 +9,6 @@
 
 
 
-        
-
-
-
-
-
         <main class="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12">
 
 
@@ -66,4 +60,4 @@
         </main>
     </div>
     </div>
-</section>
+</section><?php /**PATH C:\laragon\www\phpPortfolioApp\resources\views/frontend/pages/homepage/components/testimonials.blade.php ENDPATH**/ ?>

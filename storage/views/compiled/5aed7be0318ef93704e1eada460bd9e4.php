@@ -44,7 +44,7 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
 
     </head>
 
-    <body x-cloak x-data="{darkMode: $persist(false)}" :class="{'dark': darkMode === true }" class="antialiased">
+    <body class="antialiased">
 
 
         <?php if (isset($component)) { $__componentOriginalb0ee896d00153d9e46e2d29e604b3c40 = $component; } ?>
@@ -66,7 +66,6 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
 <?php $component = $__componentOriginalb0ee896d00153d9e46e2d29e604b3c40; ?>
 <?php unset($__componentOriginalb0ee896d00153d9e46e2d29e604b3c40); ?>
 <?php endif; ?>
-
 
         <?php if (isset($component)) { $__componentOriginal3b946229e42b8c722ca039a9dcf59d7a = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal3b946229e42b8c722ca039a9dcf59d7a = $attributes; } ?>

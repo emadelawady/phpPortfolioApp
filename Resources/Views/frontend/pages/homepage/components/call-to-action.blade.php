@@ -1,4 +1,4 @@
-<section class="bg-slate-200 py-6 dark:bg-gray-800 pt-10 py-20 dark:text-gray-50">
+<section class="bg-slate-200 dark:bg-gray-800 pt-10 py-20 dark:text-gray-50">
 	<div class="container mx-auto flex flex-col justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-between lg:flex-row">
 		<div class="flex flex-col space-y-4 text-center lg:text-left">
 			<h1 class="text-5xl font-bold leadi">Stay in the loop</h1>

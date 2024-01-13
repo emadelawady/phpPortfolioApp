@@ -6,6 +6,7 @@ use Core\Authenticator;
 use Core\Helper;
 use Core\routesNames;
 use Core\Session;
+use Core\Vite;
 
 function base_require($path, $file)
 {
@@ -17,6 +18,13 @@ function base_require($path, $file)
     return dirname(__DIR__) . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $file . '.php';
 }
 
+
+function vite(string $entry): string
+{
+    $vite = new Vite();
+    
+    return $vite->vite($entry);
+}
 
 
 // function view($file, $attributes = [])

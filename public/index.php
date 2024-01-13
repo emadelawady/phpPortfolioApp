@@ -11,7 +11,7 @@ use Core\Router;
 // During dev, this file would be hit when accessing your local host, like:
 // http://vite-php-setup.test
 
-require_once __DIR__ . '/helpers.php';
+// require_once __DIR__ . '/helpers.php';
 
 // use Illuminate\Container\Container;
 // use Illuminate\Events\Dispatcher;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Components\Globals\FrontEnd;
+namespace App\Http\Controllers\Frontend\Pages\Homepage\Components;
 
 use App\Models\Setting;
 use App\Models\User;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\View;
 
 use Illuminate\View\Component;
 
-class PrimaryHero extends Component
+class Hero extends Component
 {
     /**
      * Get the view / contents that represent the component.
@@ -24,7 +24,7 @@ class PrimaryHero extends Component
         $homepage_settings_hero = Setting::where('setting_name', '=', 'homepage_hero')->first();
 
 
-        return View::make('components.globals.frontend.hero.primary', ['homepage_settings_hero' =>  $homepage_settings_hero]);
+        return View::make('frontend.pages.homepage.components.hero', ['homepage_settings_hero' =>  $homepage_settings_hero]);
 
     }
 }

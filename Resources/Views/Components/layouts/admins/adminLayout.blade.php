@@ -43,11 +43,10 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
 
     </head>
 
-    <body x-cloak x-data="{darkMode: $persist(false)}" :class="{'dark': darkMode === true }" class="antialiased">
+    <body class="antialiased">
 
 
         <x-admins.navbar.primary></x-admins.navbar.primary>
-
 
         <x-globals.admins.sidebar/>
 

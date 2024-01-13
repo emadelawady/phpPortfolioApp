@@ -9,7 +9,7 @@ $router->get('/admin/new/{slug}/{id}', controller:['Admins/ProfileShow', 'index'
 $router->get("/users/{id}", controller:['Users/UserController', 'show'])->name('user.id')->only('auth');
 
 
-$router->get('/', controller:['HomeController', 'index'])->name('homepage');
+$router->get('/', controller:['Frontend/Pages/Homepage/HomeController', 'index'])->name('homepage');
 
 
 
