@@ -14,6 +14,8 @@ use Illuminate\View\Component;
 
 class Hero extends Component
 {
+    const BLADE_NAME = 'frontend.homepage.hero';
+
     /**
      * Get the view / contents that represent the component.
      */

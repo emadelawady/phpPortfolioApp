@@ -33,7 +33,7 @@ Trait Services {
     {
         http_response_code($code);
 
-        View::blade('Pages.Abort.404');
+        View::blade('404');
 
         die();
     }

@@ -8,6 +8,7 @@ use Core\routesNames;
 use Core\Session;
 use Core\Vite;
 
+
 function base_require($path, $file)
 {
     if($path === 'root') {
@@ -42,25 +43,38 @@ function old($key, $default = ''){
 
 
 
-
-
 function route($name, $args = []){
     return Helper::route($name, $args);
 }
 
 
-function is_current_route(string $route_name = '' , array $args = [])
-{
-    return Helper::is_current_route($route_name , $args);
-}
-
 function in_route(string $route_name = '' , array $args = [])
 {
     
-    return Helper::in_route($route_name, $args);
-
-  
+    return Helper::in_route($route_name, $args); 
 }
+
+function is_route(string $route_name = '' , array $args = [])
+{
+    return Helper::is_route($route_name, $args); 
+}
+
+function is_true(bool $bool, string $true = '', string $false = '')
+{
+    return Helper::is_true($bool, $true, $false); 
+}
+
+
+function is_current_route(
+    mixed $route_no_args = [],
+    mixed $route_args = [],
+    bool $bool = false,
+    string $if_true = null,
+    string $if_false = null)
+{
+    return Helper::is_current_route($route_no_args, $route_args, $bool,$if_true, $if_false);
+}
+
 
 function route_css(string $route_name = '',string $if_true = '', string $if_false = '', array $args = [])
 {
@@ -82,6 +96,10 @@ function public_path($path)
     return Helper::public_path($path);
 }
 
+function core_path($path)
+{
+    return Helper::core_path($path);
+}
 
 function geT_public_path()
 {

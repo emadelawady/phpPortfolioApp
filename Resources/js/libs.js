@@ -32,7 +32,7 @@ import 'flowbite/dist/flowbite.min';
 
 
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".homepage_portfolio_slider", {
   modules: [Navigation, Pagination, Scrollbar],
   slidesPerView: 1,
   spaceBetween: 10,
@@ -71,7 +71,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-var swip = new Swiper(".mSwiper", {
+var swip = new Swiper(".mSwiperPortfolioPage", {
   modules: [Navigation, Pagination, Scrollbar],
   slidesPerView: 1,
   spaceBetween: 0,

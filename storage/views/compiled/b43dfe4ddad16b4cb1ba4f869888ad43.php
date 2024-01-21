@@ -90,7 +90,7 @@
       @keyup.right.window="imageGalleryNext();" 
       @keyup.left.window="imageGalleryPrev();"
       class="w-full h-full select-none">
-      <div class="swiper mSwiper max-w-6xl mx-auto duration-1000 delay-300 opacity-0 select-none ease animate-fade-in-view" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+      <div class="swiper mSwiperPortfolioPage max-w-6xl mx-auto duration-1000 delay-300 opacity-0 select-none ease animate-fade-in-view" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
           <ul x-ref="gallery" id="gallery" class="swiper-wrapper grid grid-cols-2 gap-5 lg:grid-cols-5">
 
 

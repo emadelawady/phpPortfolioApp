@@ -14,6 +14,8 @@ use Illuminate\View\Component;
 
 class Testimonials extends Component
 {
+    const BLADE_NAME = 'frontend.homepage.testimonials';
+
     /**
      * Get the view / contents that represent the component.
      */

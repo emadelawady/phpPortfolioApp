@@ -46,15 +46,15 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
     <body class="antialiased">
 
 
-        <x-admins.navbar.primary></x-admins.navbar.primary>
+        <x-backend.navbar />
 
-        <x-globals.admins.sidebar/>
+        <x-backend.sidebar/>
 
         <div class="content p-10 sm:ml-64">
 
             {{ $slot }}
                 
-            <x-admins.footer.primary></x-admins.footer.primary>
+            <x-backend.footer />
             
         </div>
 

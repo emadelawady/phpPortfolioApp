@@ -10,24 +10,25 @@
 <?php $component->withAttributes([]); ?>
 
 
-<?php if (isset($component)) { $__componentOriginal5e851c88a5afa92a279de551091a4c2f = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal5e851c88a5afa92a279de551091a4c2f = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.navbar.guest','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('navbar.guest'); ?>
+<?php if (isset($component)) { $__componentOriginal6d8b68facbeb2c769b4f345ea348cddf = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal6d8b68facbeb2c769b4f345ea348cddf = $attributes; } ?>
+<?php $component = App\Http\Controllers\Frontend\Components\Navbars\GuestNavbar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('frontend.guest.navbar'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Frontend\Components\Navbars\GuestNavbar::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginal5e851c88a5afa92a279de551091a4c2f)): ?>
-<?php $attributes = $__attributesOriginal5e851c88a5afa92a279de551091a4c2f; ?>
-<?php unset($__attributesOriginal5e851c88a5afa92a279de551091a4c2f); ?>
+<?php if (isset($__attributesOriginal6d8b68facbeb2c769b4f345ea348cddf)): ?>
+<?php $attributes = $__attributesOriginal6d8b68facbeb2c769b4f345ea348cddf; ?>
+<?php unset($__attributesOriginal6d8b68facbeb2c769b4f345ea348cddf); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginal5e851c88a5afa92a279de551091a4c2f)): ?>
-<?php $component = $__componentOriginal5e851c88a5afa92a279de551091a4c2f; ?>
-<?php unset($__componentOriginal5e851c88a5afa92a279de551091a4c2f); ?>
+<?php if (isset($__componentOriginal6d8b68facbeb2c769b4f345ea348cddf)): ?>
+<?php $component = $__componentOriginal6d8b68facbeb2c769b4f345ea348cddf; ?>
+<?php unset($__componentOriginal6d8b68facbeb2c769b4f345ea348cddf); ?>
 <?php endif; ?>
 
   <div class="w-full h-screen grid place-items-center">

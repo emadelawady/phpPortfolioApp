@@ -74,6 +74,16 @@ Trait Bundles {
         echo self::$public_path . $file;
 
     }
+
+    public static function base_path($file)
+    {
+        return dirname(__DIR__, 2) .DIRECTORY_SEPARATOR. $file;
+    }
+
+    public static function core_path($file)
+    {
+        return dirname(__DIR__) .DIRECTORY_SEPARATOR. $file;
+    }
     public static function get_public_path()
     {;
 

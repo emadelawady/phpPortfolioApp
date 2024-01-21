@@ -379,19 +379,19 @@
                     Ideal for Startups and Small Companies
                 </p>
                 <ul class="flex-1 p-0 mt-4 ml-5 leading-7 text-gray-900 border-0 border-gray-200">
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         Automated Reporting
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         Faster Processing
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
@@ -419,25 +419,25 @@
                     Ideal for medium-size businesses to larger businesses
                 </p>
                 <ul class="flex-1 p-0 mt-4 leading-7 text-gray-900 border-0 border-gray-200">
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         Everything in Starter
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         100 Builds
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         Progress Reports
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
@@ -465,25 +465,25 @@
                     Ideal for larger and enterprise companies
                 </p>
                 <ul class="flex-1 p-0 mt-4 leading-7 text-gray-900 border-0 border-gray-200">
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         Everything in Basic
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         Unlimited Builds
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                         Advanced Analytics
                     </li>
-                    <li class="inline-flex items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
+                    <li class="items-center block w-full mb-2 ml-5 font-semibold text-left border-solid">
                         <svg class="w-5 h-5 mr-2 font-semibold leading-7 text-blue-600 sm:h-5 sm:w-5 md:h-6 md:w-6" data-primary="blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>

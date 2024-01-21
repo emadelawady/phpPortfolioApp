@@ -14,6 +14,8 @@ use Illuminate\View\Component;
 
 class Contact extends Component
 {
+    const BLADE_NAME = 'frontend.homepage.contact';
+
     /**
      * Get the view / contents that represent the component.
      */

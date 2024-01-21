@@ -27,8 +27,8 @@
         "psr-4": {
             "Core\\": "core/",
             "App\\": "app/",
-            "Database\\": "database/"
-        },
-        "classmap": ["commands"]
+            "Database\\": "database/",
+            "Commands\\": "commands/"
+        }
     }
 }

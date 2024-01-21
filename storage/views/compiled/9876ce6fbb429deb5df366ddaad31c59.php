@@ -18,26 +18,28 @@
 
 
     <section class="shadow border-b">
-        <?php if (isset($component)) { $__componentOriginala755a76973cf7ba4893a48a7fac52cdd = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginala755a76973cf7ba4893a48a7fac52cdd = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.navbar.primary-links','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('navbar.primary-links'); ?>
+        <?php if (isset($component)) { $__componentOriginal6ec1774d3e3196904cd2fdbe84332710 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal6ec1774d3e3196904cd2fdbe84332710 = $attributes; } ?>
+<?php $component = App\Http\Controllers\Frontend\Components\Navbars\NavbarLinks::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('frontend.navbar.links'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Frontend\Components\Navbars\NavbarLinks::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginala755a76973cf7ba4893a48a7fac52cdd)): ?>
-<?php $attributes = $__attributesOriginala755a76973cf7ba4893a48a7fac52cdd; ?>
-<?php unset($__attributesOriginala755a76973cf7ba4893a48a7fac52cdd); ?>
+<?php if (isset($__attributesOriginal6ec1774d3e3196904cd2fdbe84332710)): ?>
+<?php $attributes = $__attributesOriginal6ec1774d3e3196904cd2fdbe84332710; ?>
+<?php unset($__attributesOriginal6ec1774d3e3196904cd2fdbe84332710); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginala755a76973cf7ba4893a48a7fac52cdd)): ?>
-<?php $component = $__componentOriginala755a76973cf7ba4893a48a7fac52cdd; ?>
-<?php unset($__componentOriginala755a76973cf7ba4893a48a7fac52cdd); ?>
+<?php if (isset($__componentOriginal6ec1774d3e3196904cd2fdbe84332710)): ?>
+<?php $component = $__componentOriginal6ec1774d3e3196904cd2fdbe84332710; ?>
+<?php unset($__componentOriginal6ec1774d3e3196904cd2fdbe84332710); ?>
 <?php endif; ?>
     </section>
+
 
 <section id="home" class="home scroll-spy flex flex-col items-stretch bg-grey-lighter min-h-screen">
 

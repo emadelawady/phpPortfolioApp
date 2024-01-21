@@ -1,5 +1,8 @@
 <?php
 
+namespace Commands;
+
+
 use Database\Migrations\Create_blog_table;
 use Illuminate\Console\Command;
 

@@ -11,7 +11,7 @@
     "css": [
       "assets/libs-xbtvTMtQ.css"
     ],
-    "file": "assets/libs-DmaPFMGr.js",
+    "file": "assets/libs-Hv7mL_-Z.js",
     "imports": [
       "_vendor-MViPgyIV.js"
     ],
@@ -28,9 +28,9 @@
   },
   "js/styles.js": {
     "css": [
-      "assets/styles-S52aghu2.css"
+      "assets/styles-4blqm3Jr.css"
     ],
-    "file": "assets/styles-cJmjKg5I.js",
+    "file": "assets/styles-BsalFaRQ.js",
     "isEntry": true,
     "src": "js/styles.js"
   }

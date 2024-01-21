@@ -9,8 +9,9 @@
 {{-- @dd($homepage_settings_hero) --}}
 
     <section class="shadow border-b">
-        <x-navbar.primary-links></x-navbar.primary-links>
+        <x-frontend.navbar.links />
     </section>
+
 
 <section id="home" class="home scroll-spy flex flex-col items-stretch bg-grey-lighter min-h-screen">
 

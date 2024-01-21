@@ -14,6 +14,8 @@ use Illuminate\View\Component;
 
 class Services extends Component
 {
+    const BLADE_NAME = 'frontend.homepage.services';
+
     /**
      * Get the view / contents that represent the component.
      */

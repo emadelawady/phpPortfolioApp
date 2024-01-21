@@ -47,45 +47,46 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
     <body class="antialiased">
 
 
-        <?php if (isset($component)) { $__componentOriginalb0ee896d00153d9e46e2d29e604b3c40 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalb0ee896d00153d9e46e2d29e604b3c40 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admins.navbar.primary','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('admins.navbar.primary'); ?>
+        <?php if (isset($component)) { $__componentOriginalbf7f07569cb0f7b144c7a4a1d685e36a = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalbf7f07569cb0f7b144c7a4a1d685e36a = $attributes; } ?>
+<?php $component = App\Http\Controllers\Backend\Components\Navbar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('backend.navbar'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalb0ee896d00153d9e46e2d29e604b3c40)): ?>
-<?php $attributes = $__attributesOriginalb0ee896d00153d9e46e2d29e604b3c40; ?>
-<?php unset($__attributesOriginalb0ee896d00153d9e46e2d29e604b3c40); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalb0ee896d00153d9e46e2d29e604b3c40)): ?>
-<?php $component = $__componentOriginalb0ee896d00153d9e46e2d29e604b3c40; ?>
-<?php unset($__componentOriginalb0ee896d00153d9e46e2d29e604b3c40); ?>
-<?php endif; ?>
-
-        <?php if (isset($component)) { $__componentOriginal3b946229e42b8c722ca039a9dcf59d7a = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal3b946229e42b8c722ca039a9dcf59d7a = $attributes; } ?>
-<?php $component = App\Http\Controllers\Components\Globals\Admins\Sidebar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('globals.admins.sidebar'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Components\Globals\Admins\Sidebar::class))->getConstructor()): ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Backend\Components\Navbar::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginal3b946229e42b8c722ca039a9dcf59d7a)): ?>
-<?php $attributes = $__attributesOriginal3b946229e42b8c722ca039a9dcf59d7a; ?>
-<?php unset($__attributesOriginal3b946229e42b8c722ca039a9dcf59d7a); ?>
+<?php if (isset($__attributesOriginalbf7f07569cb0f7b144c7a4a1d685e36a)): ?>
+<?php $attributes = $__attributesOriginalbf7f07569cb0f7b144c7a4a1d685e36a; ?>
+<?php unset($__attributesOriginalbf7f07569cb0f7b144c7a4a1d685e36a); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginal3b946229e42b8c722ca039a9dcf59d7a)): ?>
-<?php $component = $__componentOriginal3b946229e42b8c722ca039a9dcf59d7a; ?>
-<?php unset($__componentOriginal3b946229e42b8c722ca039a9dcf59d7a); ?>
+<?php if (isset($__componentOriginalbf7f07569cb0f7b144c7a4a1d685e36a)): ?>
+<?php $component = $__componentOriginalbf7f07569cb0f7b144c7a4a1d685e36a; ?>
+<?php unset($__componentOriginalbf7f07569cb0f7b144c7a4a1d685e36a); ?>
+<?php endif; ?>
+
+        <?php if (isset($component)) { $__componentOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e = $attributes; } ?>
+<?php $component = App\Http\Controllers\Backend\Components\Sidebar::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('backend.sidebar'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Backend\Components\Sidebar::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e)): ?>
+<?php $attributes = $__attributesOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e; ?>
+<?php unset($__attributesOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e)): ?>
+<?php $component = $__componentOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e; ?>
+<?php unset($__componentOriginalb1775fd4cb4b33ae2fa53ccf26aa1a9e); ?>
 <?php endif; ?>
 
         <div class="content p-10 sm:ml-64">
@@ -93,24 +94,25 @@ $route = route('admin.dashboard.index',['req' => 'aa']);
             <?php echo e($slot); ?>
 
                 
-            <?php if (isset($component)) { $__componentOriginal7200da79b415b375b554ff9a0cddc91d = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal7200da79b415b375b554ff9a0cddc91d = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.admins.footer.primary','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('admins.footer.primary'); ?>
+            <?php if (isset($component)) { $__componentOriginal4599e0a2989a37a7e2a9f7f4f2be57f6 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal4599e0a2989a37a7e2a9f7f4f2be57f6 = $attributes; } ?>
+<?php $component = App\Http\Controllers\Backend\Components\Footer::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('backend.footer'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\Http\Controllers\Backend\Components\Footer::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginal7200da79b415b375b554ff9a0cddc91d)): ?>
-<?php $attributes = $__attributesOriginal7200da79b415b375b554ff9a0cddc91d; ?>
-<?php unset($__attributesOriginal7200da79b415b375b554ff9a0cddc91d); ?>
+<?php if (isset($__attributesOriginal4599e0a2989a37a7e2a9f7f4f2be57f6)): ?>
+<?php $attributes = $__attributesOriginal4599e0a2989a37a7e2a9f7f4f2be57f6; ?>
+<?php unset($__attributesOriginal4599e0a2989a37a7e2a9f7f4f2be57f6); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginal7200da79b415b375b554ff9a0cddc91d)): ?>
-<?php $component = $__componentOriginal7200da79b415b375b554ff9a0cddc91d; ?>
-<?php unset($__componentOriginal7200da79b415b375b554ff9a0cddc91d); ?>
+<?php if (isset($__componentOriginal4599e0a2989a37a7e2a9f7f4f2be57f6)): ?>
+<?php $component = $__componentOriginal4599e0a2989a37a7e2a9f7f4f2be57f6; ?>
+<?php unset($__componentOriginal4599e0a2989a37a7e2a9f7f4f2be57f6); ?>
 <?php endif; ?>
             
         </div>

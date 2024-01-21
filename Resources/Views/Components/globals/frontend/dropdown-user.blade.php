@@ -79,16 +79,18 @@
     <li class="list-none text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
         <a
             href="{{ route('login') }}"
-            class="px-2.5 py-2 md:mx-2 hover:text-primary {{ is_current_route('login') ? 'active' : '' }}"
+            class="px-2.5 py-2 md:mx-2 hover:text-primary {{ is_true(is_route('login'), false:'hover:active') }}"
         >
             Login
         </a>
+
     </li>
-    @elseif(!is_current_route('register'))
+    @endif
+    @if(!is_current_route('register'))
     <li class="list-none text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
         <a
             href="{{ route('register') }}"
-            class="px-2.5 py-2 md:mx-2 hover:text-primary {{ is_current_route('register') ? 'active' : '' }}"
+            class="px-2.5 py-2 md:mx-2 hover:text-primary {{ is_true(is_route('register'), false:'hover:active') }}"
         >
             Register
         </a>

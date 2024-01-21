@@ -1,5 +1,7 @@
 <?php
 
+namespace Commands\Db_tables_Commands;
+
 use Illuminate\Console\Command;
 use App\Models\User;
 use Core\App;

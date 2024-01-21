@@ -1,5 +1,8 @@
 <?php
 
+namespace Commands\Db_tables_Commands;
+
+
 use Database\Migrations\Create_blog_table;
 use Database\Migrations\Create_settings_table;
 use Database\Seeders\BlogTableSeeder;

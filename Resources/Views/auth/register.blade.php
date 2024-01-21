@@ -1,7 +1,7 @@
 <x-layouts.blank>
 
 
-<x-navbar.guest></x-navbar.guest>
+<x-frontend.guest.navbar />
 
 
   <div class="w-full h-screen grid place-items-center">

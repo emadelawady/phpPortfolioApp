@@ -34,7 +34,7 @@
     <section class="navigation w-full antialiased bg-white">
 
         @if (is_current_route('homepage'))
-            <x-navbar.primary></x-navbar.primary>
+            <x-frontend.navbar />
         @elseif (($_SERVER['REQUEST_URI'] == $portfolio))
          {{-- <x-navbar.secondary></x-navbar.secondary> --}}
 
@@ -42,8 +42,8 @@
     </section>
 
             {{ $slot }}
-            
-    <x-footer.primary></x-footer.primary>
+
+        <x-frontend.footer />
 
             {{-- {{ Core\Helper::asset('build/libs.js') }}  --}}
             {!! vite('js/libs.js') !!}

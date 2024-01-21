@@ -80,16 +80,18 @@
     <li class="list-none text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
         <a
             href="<?php echo e(route('login')); ?>"
-            class="px-2.5 py-2 md:mx-2 hover:text-primary <?php echo e(is_current_route('login') ? 'active' : ''); ?>"
+            class="px-2.5 py-2 md:mx-2 hover:text-primary <?php echo e(is_true(is_route('login'), false:'hover:active')); ?>"
         >
             Login
         </a>
+
     </li>
-    <?php elseif(!is_current_route('register')): ?>
+    <?php endif; ?>
+    <?php if(!is_current_route('register')): ?>
     <li class="list-none text-gray-700 transition-colors duration-300 transform dark:text-gray-200">
         <a
             href="<?php echo e(route('register')); ?>"
-            class="px-2.5 py-2 md:mx-2 hover:text-primary <?php echo e(is_current_route('register') ? 'active' : ''); ?>"
+            class="px-2.5 py-2 md:mx-2 hover:text-primary <?php echo e(is_true(is_route('register'), false:'hover:active')); ?>"
         >
             Register
         </a>

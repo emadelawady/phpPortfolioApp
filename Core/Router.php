@@ -24,11 +24,8 @@ class Router
 
     public function add(mixed $method, mixed $uri, mixed  $controller) {
 
-        // dd($controller);
+        $this->controller_path = str_replace('/', DIRECTORY_SEPARATOR, $controller[0]);
 
-    $this->controller_path = str_replace('/', DIRECTORY_SEPARATOR, $controller[0]);
-
-    // dd($this->fix_controller_separator);
 
         //will store all the parameters value in this array
         $params = [] ?? null;
@@ -40,8 +37,6 @@ class Router
         //finding if there is any {?} parameter in $route
         preg_match_all("/(?<={).+?(?=})/", $uri, $paramMatches);
 
-        // dd($paramMatches);
-        // $this->parameters[] = $paramMatches;
 
         
             $this->routesNoParams[] = [
@@ -53,8 +48,6 @@ class Router
                 'params' =>  $params ?? [],
                 'paramMatches' => $paramMatches[0],
             ];
-
-            
      
             $this->routesParams[] = [
                 'method' => $method,
@@ -65,8 +58,6 @@ class Router
                 'params' =>  $params ?? [],
                 'paramMatches' => $paramMatches[0],
             ];
-
-        // dd($this->routesParams);
 
             self::$uri = $uri;
             self::$method = $method;
@@ -130,13 +121,9 @@ class Router
         //will store all the parameters names in this array
         $paramKey = [] ?? null;
 
-        // dd($this->parameters);
-
-        // dd($this->routesNoParams);
+ 
         foreach ($this->routesNoParams as $route) {
 
-                // dd($route['params']);
-            // dd($route['paramMatches']);
             if(empty($route['paramMatches'])){
 
                 //replacing first and last forward slashes
@@ -156,44 +143,20 @@ class Router
                 
 
                 if($reqUri == $route['uri'] && $route['method'] === strtoupper($method)){
-                    // dd($route['uri']);
 
-                Middleware::resolve($route['middleware']);
-
-                $path = $route['controller'];
-                $action = $route['action'];
-
-
-                $path_find_last = substr(strrchr($path,DIRECTORY_SEPARATOR), 1);
-
-            
-                $path_delete_last = substr($path, 0, - strlen($path_find_last));
-
-
-                $exp = explode(DIRECTORY_SEPARATOR,$path);
-
-                $last = end($exp);
-
-
-                $controllers_path = DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR . 'Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR;
-
-                $classPath = $controllers_path . $path_delete_last . $last;
-
+                    Middleware::resolve($route['middleware']);
     
-                $initClass = new $classPath();
-  
-                call_user_func([$initClass, $action]);
-                
-                return $this;
+                    call_user_func([
+                        new $route['controller'](),
+                        $route['action']
+                    ]);
+                    
+                    return $this;
 
                 }    
 
             } 
         }
-
-
-        // dd($this->routesParams['paramMatches']);
-
        
   
 
@@ -206,8 +169,6 @@ class Router
                 $paramKey[$in] = $key;
             }
    
-            // dd($paramKey);
-
 
             //replacing first and last slashes
             //$_REQUEST['uri'] will be empty if req uri is /
@@ -215,43 +176,28 @@ class Router
                 $route['uri'] = preg_replace("/(^\/)|(\/$)/","",$route['uri']);
                 $reqUri =  preg_replace("/(^\/)|(\/$)/","",$uri);
 
-                // dd($route['uri']);
             }else{
                 $reqUri = "/";
             }
 
 
-
-            // dd($route['uri'], $slashes_uri);
-
             //exploding route address
             $_uri = explode("/", $route['uri']);
-
-            // dd($_uri);
-
         
 
             //will store index number where {?} parameter is required in the $route 
             $indexNum = []; 
 
 
-
-            // dd($indexNum);
-
-            // dd($_uri);
             //storing index number, where {?} parameter is required with the help of regex
             foreach($_uri as $index => $param){
 
                 if(preg_match("/{.*}/", $param)){
 
-                    // dd(count($route['paramMatches']));
                     $indexNum[] = $index;
 
                 }
             }
-            // dd($indexNum);
-
-          
 
 
 
@@ -259,18 +205,11 @@ class Router
             //the exact index number value of parameter from $_REQUEST['uri']
             $reqUri = explode("/", $reqUri);
 
-            // dd($indexNum);
-
 
 
             //running for each loop to set the exact index number with reg expression
             //this will help in matching route
             foreach($indexNum as $key => $index){
-
-                    
-
-                
-                // dd($paramKey[$key]);
 
 
                 //setting params with params names
@@ -289,14 +228,7 @@ class Router
                     return Helper::abort();
                 } 
 
-
             }
-
-
-            $arr_keys = array_keys($route['params']);
-            $param_values = array_values($route['params']);
-            $arr_values = array_values($route['paramMatches']);
-
 
 
             //converting array to sting
@@ -307,41 +239,20 @@ class Router
             //regex to match route is ready !
             $reqUri = str_replace("/", '\\/', $reqUri);
 
-            // dd($reqUri,$route['uri']);
 
 
             //now matching route with regex
             if(preg_match("/$reqUri/", $route['uri']) && strtoupper($method) == $route['method'])
             {
 
-
                 Middleware::resolve($route['middleware']);
+     
+                foreach ($route['params'] as $key => $value) {
+                    $_REQUEST[$key] = $value;
+                }
+     
 
-                $path = $route['controller'];
-                $action = $route['action'];
-
-
-                $path_find_last = substr(strrchr($path,DIRECTORY_SEPARATOR), 1);
-
-            
-                $path_delete_last = substr($path, 0, - strlen($path_find_last));
-
-
-                $exp = explode(DIRECTORY_SEPARATOR,$path);
-
-                $last = end($exp);
-
-
-                $controllers_path = DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR . 'Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR;
-
-                $classPath = $controllers_path . $path_delete_last . $last;
-    
-                $initClass = new $classPath();
-
-
-                call_user_func_array([$initClass, $action], $route['params']);
-
-
+                call_user_func_array([new $route['controller'](), $route['action']], $route['params']);
 
                 return $this;
 
@@ -350,8 +261,6 @@ class Router
         }
     }
 
-
-        // }
 
   
         Helper::abort();       

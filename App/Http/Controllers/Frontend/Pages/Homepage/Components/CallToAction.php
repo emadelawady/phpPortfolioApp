@@ -14,6 +14,7 @@ use Illuminate\View\Component;
 
 class CallToAction extends Component
 {
+    const BLADE_NAME = 'frontend.homepage.call-to-action';
     /**
      * Get the view / contents that represent the component.
      */

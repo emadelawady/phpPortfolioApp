@@ -35,9 +35,6 @@
     </section>
 
 
-    
-
-
 <section class="portfolio_filter  mb-20 bg-white dark:bg-gray-900">
     <?php if (isset($component)) { $__componentOriginal5dbbf4c0a0080e77776c5e45989ba30f = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal5dbbf4c0a0080e77776c5e45989ba30f = $attributes; } ?>

@@ -27,7 +27,7 @@ class Create_users_table
 
                 $table->string('password');
 
-                $table->string('profile_image');
+                $table->string('profile_image')->nullable();
 
                 // $table->integer('user_id')->unsigned();
 

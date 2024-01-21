@@ -3,19 +3,24 @@
 
 require __DIR__.'/vendor/autoload.php';
 
+use Commands\Db_tables_Commands\BlogsTableCommand;
+use Commands\Db_tables_Commands\PortfolioTableCommand;
+use Commands\Db_tables_Commands\ServicesTableCommand;
+use Commands\Db_tables_Commands\SettingsTableCommand;
+use Commands\Db_tables_Commands\TestimonialTableCommand;
+use Commands\Db_tables_Commands\UserCommand;
+use Commands\MakeControllerCommand;
+use Commands\Migrate;
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Console\Application;
 
-
-
 $container = new Container;
+
 $events = new Dispatcher($container);
 
 $artisan = new Application($container, $events, 'Version 1');
 $artisan->setName('Php Portfolio App');
-
-// Bind commands
 
 $artisan->resolve(UserCommand::class);
 
@@ -30,5 +35,7 @@ $artisan->resolve(ServicesTableCommand::class);
 $artisan->resolve(TestimonialTableCommand::class);
 
 $artisan->resolve(Migrate::class);
+
+$artisan->resolve(MakeControllerCommand::class);
 
 $artisan->run();

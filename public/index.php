@@ -62,7 +62,7 @@ new EloquentDatabase();
 // declare Router before Bootstrap file to attach route name to contianer
 $router = new Router();
 
-$routes = require base_require('Routes', 'Web');
+$routes = require base_require('routes', 'web');
 
 
 
@@ -76,6 +76,4 @@ $router->route($uri, $method);
 
 
 Session::unflash();
-
-
 

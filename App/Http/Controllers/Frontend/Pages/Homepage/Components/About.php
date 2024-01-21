@@ -14,6 +14,8 @@ use Illuminate\View\Component;
 
 class About extends Component
 {
+    const BLADE_NAME = 'frontend.homepage.about';
+
     /**
      * Get the view / contents that represent the component.
      */
